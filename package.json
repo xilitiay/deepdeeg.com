@@ -1,0 +1,29 @@
+{
+  "name": "deepdeeg-rebuild",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && cross-env VITE_BASE=/deepdeeg.com/ vite build && cross-env VITE_BASE=/deepdeeg.com/ node scripts/spa-fallback.mjs",
+    "build:hostinger": "tsc -b && cross-env VITE_BASE=/ vite build && cross-env VITE_BASE=/ node scripts/spa-fallback.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^10.1.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
